@@ -16,3 +16,14 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+  Run-Jupyter-notebook:
+    runs-on: self-hosted
+    container:
+      image: docker.io/continuumio/anaconda3
+    steps:
+      - run: echo inside anaconda container
+      - run: ls
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: which jupyter
